@@ -11,5 +11,5 @@ spec:
         - name: migration-container
           image: mukulmantosh/app-sample:1.0
           command: ['python', 'manage.py', 'create_dummy_user']
-      restartPolicy: OnFailure
-  backoffLimit: 15
+      restartPolicy: Never
+  backoffLimit: 10
