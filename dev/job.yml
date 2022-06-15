@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: django-argo-job
+  namespace: django-argo
+spec:
+  ttlSecondsAfterFinished: 100
+  template:
+    spec:
+      containers:
+        - name: migration-container
+          image: mukulmantosh/app-sample:1.0
+          command: ['python', 'manage.py', 'create_dummy_user']
+      restartPolicy: OnFailure
+  backoffLimit: 15
