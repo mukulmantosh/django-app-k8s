@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: mukulmantosh/app-sample:1.0
+        image: mukulmantosh/app-sample:2.0
         imagePullPolicy: Always
         ports:
         - containerPort: 8000
